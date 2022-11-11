@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Memories</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        :root {
+            --text: #3A5D4D;
+            --bg: #f5f5f5;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            background-color: var(--bg);
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1366px;
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        header {
+            font-family: 'Rubik', sans-serif;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .links {
+            margin-top: 5rem;
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            text-decoration: none;
+            width: fit-content;
+            font-family: 'Rubik', sans-serif;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 420px;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            transition: all 500ms ease-in-out;
+        }
+
+        .card-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 15px;
+            color: var(--text);
+        }
+
+        .card-caption span:nth-child(1) {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .card-caption span:nth-child(2) {
+            font-size: 0.82rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .card-line {
+            margin-top: 15px;
+            height: 2px;
+            width: 0;
+            background-color: var(--text);
+            transition: all 500ms ease-in-out;
+        }
+
+        .card:hover {
+            cursor: pointer;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+
+        .card:hover .card-line {
+            width: 100%;
+        }
+
+        /* memories */
+        .memories-wrapper {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .memory {
+            margin-top: 3rem;
+        }
+
+        .memory-title {
+            font-size: 0.9rem;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--text);
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .memory-title.right {
+            text-align: right;
+        }
+
+        .image-gallery {
+            /* Mobile first */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .image-gallery .column {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .image-single img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 400ms ease-in-out;
+        }
+
+        .image-single {
+            overflow: hidden;
+        }
+
+        .image-single:hover img {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .memory-description {
+            color: var(--text);
+            font-family: 'Rubik', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-style: italic;
+            text-align: center;
+        }
+
+
+        @media only screen and (min-width: 768px) {
+            .image-gallery {
+                flex-direction: row;
+            }
+        }
+    </style>
+    <main>
+        <div class="container">
+            <header>
+                <h1>Memories</h1>
+            </header>
+            <div class="memories-wrapper">
+                <div class="memory">
+                    <div class="memory-title">Ooty holiday trip</div>
+                    <br>
+                    <div class="image-gallery">
+                        <ul class="column">
+                            <li class="image-single">
+                                <img class="image" src="/assets/nature.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/italy.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/john.png" alt="john">
+                            </li>
+                        </ul>
+                        <ul class="column">
+                            <li class="image-single">
+                                <img class="image" src="/assets/john.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/italy.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/nature.png" alt="john">
+                            </li>
+                        </ul>
+                        <ul class="column">
+                            <li class="image-single">
+                                <img class="image" src="/assets/nature.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/john.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/italy.png" alt="john">
+                            </li>
+                        </ul>
+                    </div>
+                    <br><br>
+                    <div class="memory-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ipsam ex expedita fuga!
+                            Architecto eligendi pariatur quis, ipsa, autem saepe aliquam iure odit illum asperiores amet
+                            ipsum, provident nam? Assumenda.</p>
+                    </div>
+                </div>
+                <br><br>
+                <div class="memory">
+                    <div class="memory-title right">Aju's birthday celebrations.</div>
+                    <br>
+                    <div class="image-gallery">
+                        <ul class="column">
+                            <li class="image-single">
+                                <img class="image" src="/assets/nature.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/italy.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/john.png" alt="john">
+                            </li>
+                        </ul>
+                        <ul class="column">
+                            <li class="image-single">
+                                <img class="image" src="/assets/john.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/italy.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/nature.png" alt="john">
+                            </li>
+                        </ul>
+                        <ul class="column">
+                            <li class="image-single">
+                                <img class="image" src="/assets/nature.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/john.png" alt="john">
+                            </li>
+                            <li class="image-single">
+                                <img class="image" src="/assets/italy.png" alt="john">
+                            </li>
+                        </ul>
+                    </div>
+                    <br><br>
+                    <div class="memory-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ipsam ex expedita fuga!
+                            Architecto eligendi pariatur quis, ipsa, autem saepe aliquam iure odit illum asperiores amet
+                            ipsum, provident nam? Assumenda.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
